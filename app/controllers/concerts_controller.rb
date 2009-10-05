@@ -1,4 +1,5 @@
 class ConcertsController < ApplicationController
+  
   def index
     @concerts = Concert.find(:all)
   end

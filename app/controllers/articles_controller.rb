@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+
   def index
     @articles = Article.find(:all)
   end
@@ -42,10 +43,20 @@ class ArticlesController < ApplicationController
     redirect_to articles_url
   end
   
-  def send_data
-    render :juggernaut do |page|
-      page.insert_html :bottom, 'chat_data', "<li>#{h params[:chat_input]}</li>"
-    end
-    render :nothing => true
+  def error 
+    flash[:error] = 'There was an error with your request.'
+    redirect_to root_path
   end
+  
+  def denied
+    flash[:error] = 'You do not have proper permission to access this page.'
+    redirect_to root_path
+  end
+  
+  # def send_data
+  #   render :juggernaut do |page|
+  #     page.insert_html :bottom, 'chat_data', "<li>#{h params[:chat_input]}</li>"
+  #   end
+  #   render :nothing => true
+  # end
 end

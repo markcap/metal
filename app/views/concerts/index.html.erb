@@ -1,23 +1,20 @@
-<% title "Concerts" %>
+<% title "Malicious Intent - Concerts" %>
 
-<table>
-  <tr>
-    <th>Concert Date</th>
-    <th>Bands</th>
-    <th>Description</th>
-    <th>Venue</th>
-  </tr>
+Greetings to all the Kansas Metalheads out there! MaliciousMetal.com is still under construction, but at least now I'm 
+showing the concerts section instead of some random black metal dude. You also get a look at the new layout. So without 
+further ado, here's the upcming concerts in the Kansas area. Also, don't forget to listen at 9-midnight sunday nights on 
+<%= link_to "our online stream.", "http://173.45.231.37:8000/stream_high.m3u" %><br><br>
   <% for concert in @concerts %>
-    <tr>
-      <td><%=h concert.concert_date %></td>
-      <td><%=h concert.bands %></td>
-      <td><%=h concert.description %></td>
-      <td><%=h concert.venue_id %></td>
-      <td><%= link_to "Show", concert %></td>
-      <td><%= link_to "Edit", edit_concert_path(concert) %></td>
-      <td><%= link_to "Destroy", concert, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+    <div id="concert_block">
+      <b><%=h show_date(concert.concert_date) %><br></b>
+      <%=h concert.bands %><br>
+      <%=h concert.venue_id %><br>
+      <%=h concert.description %><br>
+			<% if logged_in? && updatable(concert)%>
+      	<%= link_to "Edit", edit_concert_path(concert) %>
+      	<%= link_to "Delete", concert, :confirm => 'Are you sure?', :method => :delete %>
+			<%end%>
+    </div>
   <% end %>
-</table>
 
-<p><%= link_to "New Concert", new_concert_path %></p>
+<p><%= link_to "Add Concert", new_concert_path %></p>

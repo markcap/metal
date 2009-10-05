@@ -29,7 +29,7 @@ width: 960px;}
 
 #logo{
 margin-left: 190px;
-margin-top: 20px;
+margin-top: 5px;
 }
 
 #header{
@@ -106,12 +106,11 @@ color: #9b0303
 
 a{
 text-decoration:none;
-color:#286ea0;
+color:#bb0f40;
 }
 
 a:hover{
 text-decoration:underline;
-color:#286ea0;
 }
 
 a img{
@@ -222,4 +221,12 @@ display:none;
 #errorExplanation ul li {
   font-size: 12px;
   list-style: disc;
+}
+
+#concert_block {
+	font-size: 14px;
+	width: 50%;
+	border: 2px gray solid;
+	padding: 15px;
+	
 }
