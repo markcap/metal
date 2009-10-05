@@ -7,21 +7,33 @@
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application' %>
 	<%= javascript_include_tag :defaults %>
-	<%= javascript_include_tag 'prototype', :juggernaut %>
 
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="container">
+		<div id="wrap">
+
+		<div id="logo">
+		 <%= link_to image_tag("/images/mi-logo.jpg", :alt => "Metal Radio"), root_path %>
+
+		</div>
+		<div id="header">
+		</div>
+
+		<div id="content">
+
+			<%= yield :layout %>
+
+		</div>
+
+		<div id="footer">
+			Copyright &copy; 2009 Mark of the Beast Ltd.
+		</div>
+		
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <%- end -%>
       
-      <%- if show_title? -%>
-        <h1><%=h yield(:title) %></h1>
-      <%- end -%>
-      
-      <%= yield %>
-    </div>
+      </div>
   </body>
 </html>

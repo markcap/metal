@@ -1,27 +1,171 @@
+body{
+margin:0 auto;
+padding:0;
+font:76% Verdana,Tahoma,Arial,sans-serif;
+background: #000000;
+color:#505050;}
 
-
-a img {
-  border: none;
+textarea{
+background: #0e0e0e;
+color: #EEEFF2;
 }
 
-a {
-  color: #0000FF;
+input{
+background: #0e0e0e;
+color: #EEEFF2;
 }
 
-body {
-  background-color: black;
-  color: gray;
-font-size: 20px;
+select{
+background: #0e0e0e;
+color: #EEEFF2;
+font-weight:bold;}
+
+#wrap{
+background: black;
+color: #838383;
+position: relative;
+margin: 0 auto;
+width: 960px;}
+
+#logo{
+margin-left: 190px;
+margin-top: 20px;
 }
 
-#container {
-  width: 50%;
-  margin: 0 auto;
-  background-color: black;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
-  font: gray;
+#header{
+	padding: 0;
+	width: 960px;
+	height: 87px;
+background: url('/images/background-header-960.jpg') no-repeat center;
+text-align: center;
+/*padding:0;*/
+/*height:45px;*/
+}
+
+#header h1{
+width:250px;
+margin:0 0 10px 0;
+float:left;
+}
+
+#header p{
+width:500px;
+float:right;
+text-align:center;
+color:#a0a0a0;
+margin:0 0 10px 0;
+font-size:2.3em;
+line-height:1.4em;
+background-color: black
+}
+
+
+#content{
+margin-top: -13px;
+background: #20181a;
+padding: 25px 15px 30px 25px;
+line-height:1.6em;
+text-align:left;}
+
+#content h2{
+font-size:1.5em;
+margin:0 0 0.5em 0;
+color: #9b0303
+}
+
+#content img{
+padding:1px;
+display:inline;
+background:black;
+color:#303030;
+border: 0px #636363 solid
+}
+
+#listennow{
+padding:1px;
+display:inline;
+background:black;
+color:#303030;
+border: 0px #636363 solid
+}
+
+h3{
+font-size:1.3em;
+margin:0 0 10px 0;
+}
+
+h4{
+font-size:1.0em;
+margin:0 0 10px 0;
+}
+
+name{
+font-size:1.0em;
+color: #9b0303
+}
+
+a{
+text-decoration:none;
+color:#286ea0;
+}
+
+a:hover{
+text-decoration:underline;
+color:#286ea0;
+}
+
+a img{
+border:0;
+}
+
+#footer{
+clear:both;
+margin:30px auto;
+padding:10px 0 20px 0;
+border-top:4px solid #f0f0f0;
+width:760px;
+text-align:center;
+color:#808080;
+font-size:0.9em;
+}
+
+#footer a{
+color:#808080;
+text-decoration:none;
+}
+
+#footer a:hover{
+text-decoration:underline;
+}
+
+.left{
+margin:10px 10px 5px 0;
+float:left;
+}
+
+.right{
+margin:10px 0 5px 10px;
+float:right;
+}
+
+.textright{
+text-align:right;
+}
+
+.center{
+text-align:center;
+}
+
+.small{
+font-size:0.8em;
+}
+
+.bold{
+font-weight:bold;
+}
+
+.hide{
+display:none;
 }
 
 #flash_notice, #flash_error {
