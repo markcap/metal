@@ -1,0 +1,23 @@
+<% title "Concerts" %>
+
+<table>
+  <tr>
+    <th>Concert Date</th>
+    <th>Bands</th>
+    <th>Description</th>
+    <th>Venue</th>
+  </tr>
+  <% for concert in @concerts %>
+    <tr>
+      <td><%=h concert.concert_date %></td>
+      <td><%=h concert.bands %></td>
+      <td><%=h concert.description %></td>
+      <td><%=h concert.venue_id %></td>
+      <td><%= link_to "Show", concert %></td>
+      <td><%= link_to "Edit", edit_concert_path(concert) %></td>
+      <td><%= link_to "Destroy", concert, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Concert", new_concert_path %></p>
