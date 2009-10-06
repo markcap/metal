@@ -1,0 +1,20 @@
+<% title "Venue" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @venue.name %>
+</p>
+<p>
+  <strong>Url:</strong>
+  <%=h @venue.url %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%=h @venue.location %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_venue_path(@venue) %> |
+  <%= link_to "Destroy", @venue, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", venues_path %>
+</p>

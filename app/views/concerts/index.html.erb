@@ -4,17 +4,20 @@ Greetings to all the Kansas Metalheads out there! MaliciousMetal.com is still un
 showing the concerts section instead of some random black metal dude. You also get a look at the new layout. So without 
 further ado, here's the upcming concerts in the Kansas area. Also, don't forget to listen at 9-midnight sunday nights on 
 <%= link_to "our online stream.", "http://173.45.231.37:8000/stream_high.m3u" %><br><br>
+
+<% if logged_in?%>
+	<p><%= link_to "Add Concert", new_concert_path %></p>
+<%end%>
+
   <% for concert in @concerts %>
     <div id="concert_block">
       <b><%=h show_date(concert.concert_date) %><br></b>
-      <%=h concert.bands %><br>
-      <%=h concert.venue_id %><br>
+      <%=h concert.bands %><br><br>
+      <%= link_to concert.venue.name, concert.venue.url %> - <%=h concert.venue.location %><br><br>
       <%=h concert.description %><br>
-			<% if logged_in? && updatable(concert)%>
-      	<%= link_to "Edit", edit_concert_path(concert) %>
-      	<%= link_to "Delete", concert, :confirm => 'Are you sure?', :method => :delete %>
-			<%end%>
+		<% if logged_in? && updatable(concert)%>
+      		<%= link_to "Edit", edit_concert_path(concert) %>
+      		<%= link_to "Delete", concert, :confirm => 'Are you sure?', :method => :delete %>
+		<%end%>
     </div>
   <% end %>
-
-<p><%= link_to "Add Concert", new_concert_path %></p>

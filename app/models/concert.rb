@@ -1,4 +1,7 @@
 class Concert < ActiveRecord::Base
+  belongs_to :venue
+  default_scope :order => 'concert_date'
+  
   def self.is_indexable_by(user, parent = nil)
      true
    end

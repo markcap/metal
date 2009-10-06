@@ -1,0 +1,21 @@
+<% title "Venues" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Location</th>
+  </tr>
+  <% for venue in @venues %>
+    <tr>
+      <td><%=h venue.name %></td>
+      <td><%=h venue.url %></td>
+      <td><%=h venue.location %></td>
+      <td><%= link_to "Show", venue %></td>
+      <td><%= link_to "Edit", edit_venue_path(venue) %></td>
+      <td><%= link_to "Destroy", venue, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Venue", new_venue_path %></p>

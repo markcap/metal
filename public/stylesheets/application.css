@@ -8,6 +8,10 @@ color:#505050;}
 textarea{
 background: #0e0e0e;
 color: #EEEFF2;
+width: 350px;
+height: 100px;
+padding: 3px;
+
 }
 
 input{
@@ -29,7 +33,7 @@ width: 960px;}
 
 #logo{
 margin-left: 190px;
-margin-top: 5px;
+margin-top: 10px;
 }
 
 #header{
@@ -228,5 +232,5 @@ display:none;
 	width: 50%;
 	border: 2px gray solid;
 	padding: 15px;
-	
+	margin-top: 10px;
 }
