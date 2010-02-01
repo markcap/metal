@@ -2,8 +2,13 @@
 
 Greetings to all the Kansas Metalheads out there! MaliciousMetal.com is still under construction, but at least now I'm 
 showing the concerts section instead of some random black metal dude. You also get a look at the new layout. So without 
-further ado, here's the upcming concerts in the Kansas area. Also, don't forget to listen at 9-midnight sunday nights on 
+further ado, here's the upcoming concerts in the Kansas area. Also, don't forget to listen at 9-midnight sunday nights on 
 <%= link_to "our online stream.", "http://173.45.231.37:8000/stream_high.m3u" %><br><br>
+
+<% if Time.now.wday == 0 && Time.now.hour > 20 %>
+    <h2><%=link_to "Malicious Intent is on NOW! CLICK HERE TO LISTEN!", "http://173.45.231.37:8000/stream_high.m3u"%></h2>
+    <br><br>
+<%end%>
 
 <% if logged_in?%>
 	<p><%= link_to "Add Concert", new_concert_path %></p>
